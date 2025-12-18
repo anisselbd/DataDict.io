@@ -3,6 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/sonner";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,6 +28,7 @@ export default function RootLayout({ children }) {
       >
         <Providers>{children}</Providers>
         <Toaster richColors position="top-right" />
+        <Analytics />
       </body>
     </html>
   );
