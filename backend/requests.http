@@ -1,0 +1,170 @@
+# Data Dictionary API - HTTP Request Examples
+# Use with VS Code REST Client, Postman, or similar tools
+
+### Variables
+@baseUrl = http://localhost:3001/api
+@token = YOUR_JWT_TOKEN_HERE
+
+# ============================================
+# AUTH ENDPOINTS
+# ============================================
+
+### Register a new user
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123",
+  "name": "Test User"
+}
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+# ============================================
+# PROJECT ENDPOINTS
+# ============================================
+
+### Create a new project
+POST {{baseUrl}}/projects
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "E-commerce Database",
+  "description": "Main database schema for the online store",
+  "slug": "ecommerce-db"
+}
+
+### List all projects (with pagination)
+GET {{baseUrl}}/projects?page=1&limit=10
+Authorization: Bearer {{token}}
+
+### Search projects
+GET {{baseUrl}}/projects?q=ecommerce
+Authorization: Bearer {{token}}
+
+### Get a specific project
+GET {{baseUrl}}/projects/PROJECT_ID_HERE
+Authorization: Bearer {{token}}
+
+### Update a project
+PATCH {{baseUrl}}/projects/PROJECT_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "E-commerce Database v2",
+  "description": "Updated description"
+}
+
+### Delete a project
+DELETE {{baseUrl}}/projects/PROJECT_ID_HERE
+Authorization: Bearer {{token}}
+
+# ============================================
+# ENTITY ENDPOINTS
+# ============================================
+
+### Create an entity
+POST {{baseUrl}}/entities
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "projectId": "PROJECT_ID_HERE",
+  "name": "users",
+  "description": "User accounts and authentication data"
+}
+
+### List entities by project
+GET {{baseUrl}}/entities?projectId=PROJECT_ID_HERE
+Authorization: Bearer {{token}}
+
+### Get a specific entity
+GET {{baseUrl}}/entities/ENTITY_ID_HERE
+Authorization: Bearer {{token}}
+
+### Update an entity
+PATCH {{baseUrl}}/entities/ENTITY_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "customers",
+  "description": "Updated description"
+}
+
+### Delete an entity
+DELETE {{baseUrl}}/entities/ENTITY_ID_HERE
+Authorization: Bearer {{token}}
+
+# ============================================
+# FIELD ENDPOINTS
+# ============================================
+
+### Create a field
+POST {{baseUrl}}/fields
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "entityId": "ENTITY_ID_HERE",
+  "name": "email",
+  "type": "VARCHAR(255)",
+  "required": true,
+  "unique": true,
+  "indexed": true,
+  "description": "User email address",
+  "constraints": [
+    {
+      "kind": "REGEX",
+      "value": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    }
+  ]
+}
+
+### List fields with filters
+GET {{baseUrl}}/fields?entityId=ENTITY_ID_HERE&required=true&type=VARCHAR
+Authorization: Bearer {{token}}
+
+### Search fields
+GET {{baseUrl}}/fields?q=email
+Authorization: Bearer {{token}}
+
+### Get a specific field
+GET {{baseUrl}}/fields/FIELD_ID_HERE
+Authorization: Bearer {{token}}
+
+### Update a field
+PATCH {{baseUrl}}/fields/FIELD_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "description": "Updated field description",
+  "indexed": true
+}
+
+### Delete a field
+DELETE {{baseUrl}}/fields/FIELD_ID_HERE
+Authorization: Bearer {{token}}
+
+# ============================================
+# EXPORT ENDPOINTS
+# ============================================
+
+### Export project as Markdown
+GET {{baseUrl}}/projects/PROJECT_ID_HERE/export/markdown
+Authorization: Bearer {{token}}
+
+### Export project as PDF
+GET {{baseUrl}}/projects/PROJECT_ID_HERE/export/pdf
+Authorization: Bearer {{token}}

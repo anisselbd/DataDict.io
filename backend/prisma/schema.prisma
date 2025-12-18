@@ -1,0 +1,140 @@
+// Prisma Schema for Data Dictionary IO - MySQL (Prisma v5)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// User Model (for JWT Authentication)
+// ============================================
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  projects Project[]
+}
+
+// ============================================
+// Project Model
+// ============================================
+model Project {
+  id          String   @id @default(uuid())
+  name        String
+  description String?  @db.Text
+  slug        String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId   String
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  entities Entity[]
+
+  @@index([userId])
+  @@index([slug])
+}
+
+// ============================================
+// Entity Model (Tables / Collections)
+// ============================================
+model Entity {
+  id          String   @id @default(uuid())
+  name        String
+  description String?  @db.Text
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  fields    Field[]
+
+  // Incoming relationships (this entity is the target)
+  incomingRelationships Relationship[] @relation("TargetEntity")
+
+  @@index([projectId])
+}
+
+// ============================================
+// Field Model
+// ============================================
+model Field {
+  id           String   @id @default(uuid())
+  name         String
+  type         String
+  required     Boolean  @default(false)
+  unique       Boolean  @default(false)
+  indexed      Boolean  @default(false)
+  order        Int      @default(0)
+  defaultValue String?
+  description  String?  @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  entityId    String
+  entity      Entity            @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  constraints FieldConstraint[]
+
+  // Outgoing relationships (this field points to another entity)
+  outgoingRelationships Relationship[] @relation("SourceField")
+  // Incoming relationships (another field points to this field)
+  incomingRelationships Relationship[] @relation("TargetField")
+
+  @@index([entityId])
+  @@index([type])
+}
+
+// ============================================
+// FieldConstraint Model (Enum, Regex, Min, Max)
+// ============================================
+enum ConstraintKind {
+  ENUM
+  REGEX
+  MIN
+  MAX
+  MINLENGTH
+  MAXLENGTH
+}
+
+model FieldConstraint {
+  id    String         @id @default(uuid())
+  kind  ConstraintKind
+  value String         @db.Text
+
+  // Relations
+  fieldId String
+  field   Field  @relation(fields: [fieldId], references: [id], onDelete: Cascade)
+
+  @@index([fieldId])
+}
+
+// ============================================
+// Relationship Model (Foreign Keys)
+// ============================================
+model Relationship {
+  id String @id @default(uuid())
+
+  // Source: the field that holds the FK
+  sourceFieldId String
+  sourceField   Field  @relation("SourceField", fields: [sourceFieldId], references: [id], onDelete: Cascade)
+
+  // Target: the entity and optionally the specific field being referenced
+  targetEntityId String
+  targetEntity   Entity  @relation("TargetEntity", fields: [targetEntityId], references: [id], onDelete: Cascade)
+  targetFieldId  String?
+  targetField    Field?  @relation("TargetField", fields: [targetFieldId], references: [id], onDelete: SetNull)
+
+  @@index([sourceFieldId])
+  @@index([targetEntityId])
+}
