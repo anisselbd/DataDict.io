@@ -11,12 +11,12 @@ export declare class EntitiesController {
             fields: number;
         };
     } & {
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }>;
     findAll(user: {
@@ -24,19 +24,19 @@ export declare class EntitiesController {
     }, projectId?: string, query?: PaginationDto): Promise<{
         data: ({
             project: {
-                id: string;
                 name: string;
+                id: string;
             };
             _count: {
                 fields: number;
             };
         } & {
-            id: string;
             name: string;
-            description: string | null;
-            order: number;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
+            description: string | null;
+            order: number;
             projectId: string;
         })[];
         meta: {
@@ -51,21 +51,24 @@ export declare class EntitiesController {
     }, projectId: string, body: {
         entityIds: string[];
     }): Promise<{
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }[]>;
     findOne(user: {
         id: string;
     }, id: string): Promise<{
         project: {
-            id: string;
             name: string;
+            id: string;
             slug: string;
+        };
+        _count: {
+            fields: number;
         };
         fields: ({
             constraints: {
@@ -75,12 +78,12 @@ export declare class EntitiesController {
                 fieldId: string;
             }[];
         } & {
-            id: string;
             name: string;
-            description: string | null;
-            order: number;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
+            description: string | null;
+            order: number;
             type: string;
             required: boolean;
             unique: boolean;
@@ -88,16 +91,13 @@ export declare class EntitiesController {
             defaultValue: string | null;
             entityId: string;
         })[];
-        _count: {
-            fields: number;
-        };
     } & {
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }>;
     update(user: {
@@ -107,12 +107,12 @@ export declare class EntitiesController {
             fields: number;
         };
     } & {
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }>;
     remove(user: {

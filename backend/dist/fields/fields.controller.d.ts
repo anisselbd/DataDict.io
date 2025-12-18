@@ -13,17 +13,17 @@ export declare class FieldsController {
             fieldId: string;
         }[];
     } & {
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }>;
     findAll(user: {
@@ -31,8 +31,8 @@ export declare class FieldsController {
     }, query: FieldQueryDto): Promise<{
         data: ({
             entity: {
-                id: string;
                 name: string;
+                id: string;
             };
             constraints: {
                 id: string;
@@ -41,17 +41,17 @@ export declare class FieldsController {
                 fieldId: string;
             }[];
         } & {
-            id: string;
             name: string;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            description: string | null;
+            order: number;
             type: string;
             required: boolean;
             unique: boolean;
             indexed: boolean;
-            order: number;
             defaultValue: string | null;
-            description: string | null;
-            createdAt: Date;
-            updatedAt: Date;
             entityId: string;
         })[];
         meta: {
@@ -66,29 +66,29 @@ export declare class FieldsController {
     }, entityId: string, body: {
         fieldIds: string[];
     }): Promise<{
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }[]>;
     findOne(user: {
         id: string;
     }, id: string): Promise<{
         entity: {
-            id: string;
-            name: string;
             project: {
-                id: string;
                 name: string;
+                id: string;
             };
+            name: string;
+            id: string;
         };
         constraints: {
             id: string;
@@ -97,17 +97,17 @@ export declare class FieldsController {
             fieldId: string;
         }[];
     } & {
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }>;
     update(user: {
@@ -120,17 +120,17 @@ export declare class FieldsController {
             fieldId: string;
         }[];
     } & {
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }>;
     remove(user: {

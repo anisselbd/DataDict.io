@@ -6,8 +6,8 @@ export declare class RelationsService {
     create(dto: CreateRelationDto): Promise<{
         sourceField: {
             entity: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -15,8 +15,8 @@ export declare class RelationsService {
                 projectId: string;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -29,8 +29,8 @@ export declare class RelationsService {
             entityId: string;
         };
         targetEntity: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -38,8 +38,8 @@ export declare class RelationsService {
             projectId: string;
         };
         targetField: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -60,8 +60,8 @@ export declare class RelationsService {
     findByProject(projectId: string): Promise<({
         sourceField: {
             entity: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -69,8 +69,8 @@ export declare class RelationsService {
                 projectId: string;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -83,8 +83,8 @@ export declare class RelationsService {
             entityId: string;
         };
         targetEntity: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -92,8 +92,8 @@ export declare class RelationsService {
             projectId: string;
         };
         targetField: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -114,8 +114,8 @@ export declare class RelationsService {
     findByEntity(entityId: string): Promise<{
         outgoing: ({
             sourceField: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -128,8 +128,8 @@ export declare class RelationsService {
                 entityId: string;
             };
             targetEntity: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -137,8 +137,8 @@ export declare class RelationsService {
                 projectId: string;
             };
             targetField: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -159,8 +159,8 @@ export declare class RelationsService {
         incoming: ({
             sourceField: {
                 entity: {
-                    id: string;
                     name: string;
+                    id: string;
                     createdAt: Date;
                     updatedAt: Date;
                     description: string | null;
@@ -168,8 +168,8 @@ export declare class RelationsService {
                     projectId: string;
                 };
             } & {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -182,8 +182,8 @@ export declare class RelationsService {
                 entityId: string;
             };
             targetEntity: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -191,8 +191,8 @@ export declare class RelationsService {
                 projectId: string;
             };
             targetField: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -214,8 +214,8 @@ export declare class RelationsService {
     findOne(id: string): Promise<{
         sourceField: {
             entity: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -223,8 +223,8 @@ export declare class RelationsService {
                 projectId: string;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -237,8 +237,8 @@ export declare class RelationsService {
             entityId: string;
         };
         targetEntity: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -246,8 +246,8 @@ export declare class RelationsService {
             projectId: string;
         };
         targetField: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -268,8 +268,8 @@ export declare class RelationsService {
     update(id: string, dto: UpdateRelationDto): Promise<{
         sourceField: {
             entity: {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -277,8 +277,8 @@ export declare class RelationsService {
                 projectId: string;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -291,8 +291,8 @@ export declare class RelationsService {
             entityId: string;
         };
         targetEntity: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -300,8 +300,8 @@ export declare class RelationsService {
             projectId: string;
         };
         targetField: {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;

@@ -9,12 +9,12 @@ export declare class ProjectsService {
             entities: number;
         };
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
     findAll(userId: string, query: PaginationDto): Promise<{
@@ -23,12 +23,12 @@ export declare class ProjectsService {
                 entities: number;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
             userId: string;
         })[];
         meta: {
@@ -47,8 +47,8 @@ export declare class ProjectsService {
                 fields: number;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -56,12 +56,12 @@ export declare class ProjectsService {
             projectId: string;
         })[];
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
     findBySlug(slug: string): Promise<{
@@ -74,8 +74,8 @@ export declare class ProjectsService {
                     fieldId: string;
                 }[];
             } & {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -88,8 +88,8 @@ export declare class ProjectsService {
                 entityId: string;
             })[];
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -97,12 +97,12 @@ export declare class ProjectsService {
             projectId: string;
         })[];
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
     update(id: string, userId: string, dto: UpdateProjectDto): Promise<{
@@ -110,12 +110,12 @@ export declare class ProjectsService {
             entities: number;
         };
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
     remove(id: string, userId: string): Promise<{
@@ -126,12 +126,12 @@ export declare class ProjectsService {
             entities: number;
         };
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }) | null>;
     private generateSlug;

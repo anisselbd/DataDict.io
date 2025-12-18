@@ -11,24 +11,24 @@ export declare class FieldsService {
             fieldId: string;
         }[];
     } & {
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }>;
     findAll(userId: string, query: FieldQueryDto): Promise<{
         data: ({
             entity: {
-                id: string;
                 name: string;
+                id: string;
             };
             constraints: {
                 id: string;
@@ -37,17 +37,17 @@ export declare class FieldsService {
                 fieldId: string;
             }[];
         } & {
-            id: string;
             name: string;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            description: string | null;
+            order: number;
             type: string;
             required: boolean;
             unique: boolean;
             indexed: boolean;
-            order: number;
             defaultValue: string | null;
-            description: string | null;
-            createdAt: Date;
-            updatedAt: Date;
             entityId: string;
         })[];
         meta: {
@@ -58,27 +58,27 @@ export declare class FieldsService {
         };
     }>;
     reorder(userId: string, entityId: string, fieldIds: string[]): Promise<{
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }[]>;
     findOne(id: string, userId: string): Promise<{
         entity: {
-            id: string;
-            name: string;
             project: {
-                id: string;
                 name: string;
+                id: string;
             };
+            name: string;
+            id: string;
         };
         constraints: {
             id: string;
@@ -87,17 +87,17 @@ export declare class FieldsService {
             fieldId: string;
         }[];
     } & {
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }>;
     update(id: string, userId: string, dto: UpdateFieldDto): Promise<{
@@ -108,17 +108,17 @@ export declare class FieldsService {
             fieldId: string;
         }[];
     } & {
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        description: string | null;
+        order: number;
         type: string;
         required: boolean;
         unique: boolean;
         indexed: boolean;
-        order: number;
         defaultValue: string | null;
-        description: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         entityId: string;
     }>;
     remove(id: string, userId: string): Promise<{

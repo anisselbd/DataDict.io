@@ -9,30 +9,30 @@ export declare class EntitiesService {
             fields: number;
         };
     } & {
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }>;
     findAll(userId: string, projectId?: string, query?: PaginationDto): Promise<{
         data: ({
             project: {
-                id: string;
                 name: string;
+                id: string;
             };
             _count: {
                 fields: number;
             };
         } & {
-            id: string;
             name: string;
-            description: string | null;
-            order: number;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
+            description: string | null;
+            order: number;
             projectId: string;
         })[];
         meta: {
@@ -44,9 +44,12 @@ export declare class EntitiesService {
     }>;
     findOne(id: string, userId: string): Promise<{
         project: {
-            id: string;
             name: string;
+            id: string;
             slug: string;
+        };
+        _count: {
+            fields: number;
         };
         fields: ({
             constraints: {
@@ -56,12 +59,12 @@ export declare class EntitiesService {
                 fieldId: string;
             }[];
         } & {
-            id: string;
             name: string;
-            description: string | null;
-            order: number;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
+            description: string | null;
+            order: number;
             type: string;
             required: boolean;
             unique: boolean;
@@ -69,25 +72,22 @@ export declare class EntitiesService {
             defaultValue: string | null;
             entityId: string;
         })[];
-        _count: {
-            fields: number;
-        };
     } & {
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }>;
     reorder(userId: string, projectId: string, entityIds: string[]): Promise<{
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }[]>;
     update(id: string, userId: string, dto: UpdateEntityDto): Promise<{
@@ -95,12 +95,12 @@ export declare class EntitiesService {
             fields: number;
         };
     } & {
-        id: string;
         name: string;
-        description: string | null;
-        order: number;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
+        description: string | null;
+        order: number;
         projectId: string;
     }>;
     remove(id: string, userId: string): Promise<{

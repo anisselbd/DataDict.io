@@ -22,9 +22,9 @@ export declare class AuthService {
         accessToken: string;
     }>;
     validateUser(userId: string): Promise<{
-        id: string;
         email: string;
         name: string | null;
+        id: string;
     }>;
     private generateToken;
 }

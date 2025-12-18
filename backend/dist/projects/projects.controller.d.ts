@@ -11,12 +11,12 @@ export declare class ProjectsController {
             entities: number;
         };
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
     findAll(user: {
@@ -27,12 +27,12 @@ export declare class ProjectsController {
                 entities: number;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
-            slug: string;
             description: string | null;
+            slug: string;
             userId: string;
         })[];
         meta: {
@@ -53,8 +53,8 @@ export declare class ProjectsController {
                 fields: number;
             };
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -62,12 +62,12 @@ export declare class ProjectsController {
             projectId: string;
         })[];
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
     update(user: {
@@ -77,12 +77,12 @@ export declare class ProjectsController {
             entities: number;
         };
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
     remove(user: {
@@ -97,12 +97,12 @@ export declare class ProjectsController {
             entities: number;
         };
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }) | null>;
     findBySlug(slug: string): Promise<{
@@ -115,8 +115,8 @@ export declare class ProjectsController {
                     fieldId: string;
                 }[];
             } & {
-                id: string;
                 name: string;
+                id: string;
                 createdAt: Date;
                 updatedAt: Date;
                 description: string | null;
@@ -129,8 +129,8 @@ export declare class ProjectsController {
                 entityId: string;
             })[];
         } & {
-            id: string;
             name: string;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
             description: string | null;
@@ -138,12 +138,12 @@ export declare class ProjectsController {
             projectId: string;
         })[];
     } & {
-        id: string;
         name: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
-        slug: string;
         description: string | null;
+        slug: string;
         userId: string;
     }>;
 }

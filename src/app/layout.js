@@ -16,8 +16,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Data Dictionary IO",
-  description: "Create beautiful, shareable data dictionaries",
+  metadataBase: new URL('https://data-dict-io.vercel.app'),
+  title: {
+    default: "DataDict.io | Dictionnaires de données simplifiés",
+    template: "%s | DataDict.io"
+  },
+  description: "Créez, documentez et partagez vos schémas de base de données facilement. Export PDF/Markdown, collaboration et schémas visuels.",
+  keywords: ["data dictionary", "database schema", "documentation", "sql", "modeling", "saas", "developer tool"],
+  authors: [{ name: "Anisselbd" }],
+  creator: "Anisselbd",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://data-dict-io.vercel.app",
+    title: "DataDict.io | Dictionnaires de données simplifiés",
+    description: "Créez, documentez et partagez vos schémas de base de données facilement.",
+    siteName: "DataDict.io",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DataDict.io | Dictionnaires de données simplifiés",
+    description: "Créez, documentez et partagez vos schémas de base de données facilement.",
+    creator: "@anisselbd",
+  },
 };
 
 export default function RootLayout({ children }) {
