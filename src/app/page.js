@@ -150,7 +150,7 @@ export default function HomePage() {
             DataDict.io
           </div>
           <p className="text-sm text-gray-500">
-            © 2025 DataDict.io Fait avec ❤️ par Anisselbd.
+            © 2025 DataDict.io - Tous droits réservés. Anisselbd
           </p>
         </div>
       </footer>
