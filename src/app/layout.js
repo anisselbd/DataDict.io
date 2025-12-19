@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://data-dict-io.vercel.app'),
+  metadataBase: new URL('https://datadico.com'),
   title: {
     default: "DataDict.io | Dictionnaires de données simplifiés",
     template: "%s | DataDict.io"
@@ -28,16 +28,25 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://data-dict-io.vercel.app",
+    url: "https://datadico.com",
     title: "DataDict.io | Dictionnaires de données simplifiés",
     description: "Créez, documentez et partagez vos schémas de base de données facilement.",
     siteName: "DataDict.io",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "DataDict.io - Dictionnaires de données simplifiés",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "DataDict.io | Dictionnaires de données simplifiés",
     description: "Créez, documentez et partagez vos schémas de base de données facilement.",
     creator: "@anisselbd",
+    images: ["/og-image.png"],
   },
 };
 
