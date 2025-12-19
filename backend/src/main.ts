@@ -21,6 +21,8 @@ async function bootstrap() {
     origin: [
       'http://localhost:3000',
       'http://127.0.0.1:3000',
+      'https://datadico.com',
+      'https://www.datadico.com',
       process.env.FRONTEND_URL, // Allow production frontend
     ].filter(Boolean), // Remove undefined if variable not set
     credentials: true,
