@@ -5,6 +5,6 @@ export default function robots() {
             allow: '/',
             disallow: '/dashboard/',
         },
-        sitemap: 'https://data-dict-io.vercel.app/sitemap.xml',
+        sitemap: 'https://datadico.com/sitemap.xml',
     }
 }

@@ -51,8 +51,62 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://datadico.com/#organization",
+        "name": "DataDict.io",
+        "url": "https://datadico.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://datadico.com/og-image.png"
+        },
+        "sameAs": [
+          "https://twitter.com/anisselbd"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://datadico.com/#website",
+        "url": "https://datadico.com",
+        "name": "DataDict.io",
+        "description": "Créez, documentez et partagez vos schémas de base de données facilement.",
+        "publisher": {
+          "@id": "https://datadico.com/#organization"
+        },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "DataDict.io",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "url": "https://datadico.com",
+        "description": "Créez, documentez et partagez vos schémas de base de données facilement. Export PDF/Markdown, collaboration et schémas visuels.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "24"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

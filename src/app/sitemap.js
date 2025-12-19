@@ -1,5 +1,5 @@
 export default function sitemap() {
-    const baseUrl = 'https://data-dict-io.vercel.app';
+    const baseUrl = 'https://datadico.com';
 
     return [
         {
